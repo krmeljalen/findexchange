@@ -25,7 +25,7 @@ function get_markets($url,$url_market,$id) {
         if ($xchange != "")
                 $color = "\033[0;32m";
 
-        echo $color."".$id." - ".$matches[1][0]." - ".$xchange."\n";
+        echo $color."".$id."\033[0m - ".$matches[1][0]." - ".$xchange."\n";
 }
 
 $data = json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/?limit=".$limit));
@@ -34,5 +34,4 @@ foreach ($data as $market) {
         $url = "https://coinmarketcap.com/currencies/".$market->id."/";
         $url_market = "https://coinmarketcap.com/currencies/".$market->id."/#markets";
         get_markets($url,$url_market,$market->id);
-        echo "\033[0m";
 }
