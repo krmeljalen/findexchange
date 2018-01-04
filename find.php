@@ -31,4 +31,5 @@ foreach ($data as $market) {
         $url = "https://coinmarketcap.com/currencies/".$market->id."/";
         $url_market = "https://coinmarketcap.com/currencies/".$market->id."/#markets";
         get_markets($url,$url_market,$market->id);
+        echo "\033[0m";
 }
