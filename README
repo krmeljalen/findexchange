@@ -1,0 +1,15 @@
+Run from CLI:
+
+	php find.php
+
+Edit 2nd line in file and set exchanges you wish to match:
+
+E.g. $exchanges = array("binance","cryptopia");
+
+
+Output:
+
+<Name> - <Coin> - <Exchanges>
+
+Red - if exchange was not matched
+Green - if exchange was matched
