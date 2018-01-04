@@ -1,4 +1,7 @@
 <?php
+// Top how many you wish to check
+$limit = 100;
+// Exchanges you wish to match
 $exchanges = array("binance","cryptopia");
 
 function get_markets($url,$url_market,$id) {
@@ -25,7 +28,7 @@ function get_markets($url,$url_market,$id) {
         echo $color."".$id." - ".$matches[1][0]." - ".$xchange."\n";
 }
 
-$data = json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/?limit=100"));
+$data = json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/?limit=".$limit));
 
 foreach ($data as $market) {
         $url = "https://coinmarketcap.com/currencies/".$market->id."/";
